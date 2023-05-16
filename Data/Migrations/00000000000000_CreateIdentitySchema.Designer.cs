@@ -84,10 +84,10 @@ namespace MvcWebAppWithUserAccounts.Data.Migrations
                         .HasMaxLength(256);
 
                     b.Property<bool>("EmailConfirmed")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("BOOLEAN");
 
                     b.Property<bool>("LockoutEnabled")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("BOOLEAN");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("TEXT");
@@ -107,13 +107,13 @@ namespace MvcWebAppWithUserAccounts.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("PhoneNumberConfirmed")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("BOOLEAN");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
                     b.Property<bool>("TwoFactorEnabled")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("BOOLEAN");
 
                     b.Property<string>("UserName")
                         .HasColumnType("TEXT")
