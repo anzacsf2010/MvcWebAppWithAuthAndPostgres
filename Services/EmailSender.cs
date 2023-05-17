@@ -16,21 +16,22 @@ public class EmailSender : IEmailSender
     public async Task SendEmailAsync(string email, string subject, string htmlMessage)
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
     {
-        string fromMail = "andy@revistapyc.com";
-        string fromPassword = "18167782014@ndy";
+        string fromMail = "andypyc";
+        string fromMailEmail = "andy@revistapyc.com";
+        string fromPassword = "Andyrevista123";
 
         MailMessage message = new MailMessage();
-        message.From = new MailAddress(fromMail);
+        message.From = new MailAddress(fromMailEmail);
         message.Subject = subject;
         message.To.Add(new MailAddress(email));
         message.Body = "<html><body> " + htmlMessage + " </body></html>";
         message.IsBodyHtml = true;
 
-        var smtpClient = new SmtpClient("mail.revistapyc.com")
+        var smtpClient = new SmtpClient("smtp.us.opalstack.com")
         {
             Port = 587,
             Credentials = new NetworkCredential(fromMail, fromPassword),
-            EnableSsl = false,
+            EnableSsl = true,
         };
         smtpClient.Send(message);
     }
